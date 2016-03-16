@@ -35,11 +35,7 @@ class PostCommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
     def get_queryset(self):
-        """
-        This view should return a list of all the purchases for
-        the user as determined by the username portion of the URL.
-        """
-        post = self.kwargs['post']
+               post = self.kwargs['post']
         return Comment.objects.filter(post__pk=post)
 
 def register():
